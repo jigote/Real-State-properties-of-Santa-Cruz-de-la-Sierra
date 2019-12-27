@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+    Nano by SmartStudio, departamentos
+{% endblock %}
+
+{% block body %}
+    <h2>Aún no hay tour virtual de SmartStudio, pero puede ver otros proyectos que si tengan.</h2>
+        <a href="{{ url_for('index') }}">volver</a>
+    <br>
+    <img src="http://smartstudio.com.bo/nano_tec/images/Area-social.png" width=80% alt="NIDO Monoambiente">
+    <br>
+    <ul>
+        <li>2 dormitorios y 1 baño</li>
+        <li>82 m2 Interiors</li>
+        <li>15 m2 terraza</li>
+        <li>Opcion cocina tipo americana o cerrada</li>
+        <li>living comerdor</li>
+    </ul>
+    <a href="{{ url_for('index') }}">volver</a>
+{% endblock %}

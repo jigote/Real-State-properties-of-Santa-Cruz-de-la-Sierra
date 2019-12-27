@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <tittle>Tu paseo!</tittle>
+        <style>
+            body{
+                text-align:center;
+            }
+    
+            h1{
+                text-align: center;
+            }
+        </style>
+
+        <h1>{% block heading %}{% endblock %}</h1>
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+        <div id="content">
+            {% block content %}
+            <form>
+                <input type="text" placeholder="Full Name" name="name">
+                <button> submit!</button>
+            </form>
+            {% endblock %}
+        </div>
+        <div id="footer">
+            {% block footer %}
+            &copy; Copyright 2019 by <a href="http://comvista.ai/">comvista.ai</a>.            
+            {% endblock %}
+        </div>
+    </body>
+</html>

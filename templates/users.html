@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tu Paseo Virtual!</title>
+        <link rel="stylesheet" href="style.css">
+        <style>
+            table{
+                border:5px dotted gray;
+                border-collapse: collapse;
+                width: 80%;
+                text-align: center;
+            }
+            th{
+                color: chartreuse;
+                font-size: x-large;
+                border:1px solid black;
+                background-color: cadetblue;
+            }
+            td{
+                border:1px solid black;
+            }
+            div{
+                background-color: green;
+                width: 100%;
+                height:60px;
+
+                padding: 10px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: medium;
+                font-weight: bold;
+
+                border: 10px solid rgb(128, 4, 0);	 
+            }
+
+
+            #top{
+                font-size: 38px;
+                text-align: center;
+            }
+            #botton{
+                font-size: 20px;
+                padding:10px;
+                background-color:rgb(44, 142, 172);
+                width: 100%;
+                height:60px;
+            }
+
+            body{
+                text-align:center;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th >Departamentos</th>
+                <th >Ciudad</th>
+                <th >Pais</th>
+                <th >Usuario</th>
+            </tr>
+            {% for name in names %}
+            <tr>
+                <td> SmartStudio </td>
+                <td> Santa Cruz de la Sierra  </td>
+                <td> Bolivia</td>
+                <td> {{ name }}</td>
+            </tr>
+            {% endfor %}
+
+            <tr>
+                <td> Trii</td> 
+                <td> Santa Cruz de la Sierra </td>
+                <td> Bolivia </td>
+            </tr> 
+
+            <tr>
+                <td> Skycity </td> 
+                <td> Santa Cruz de la Sierra </td>
+                <td> Bolivia </td>
+            </tr> 
+        </table>
+
+        <p id="botton">oficina central: Barrio equipetrol, esquina fidalga.
+            <br>
+            Santa Cruz de la Sierra - Bolivia
+            <br>
+            Contacto: 76000632
+        </p>
+    </body>
+</html>
