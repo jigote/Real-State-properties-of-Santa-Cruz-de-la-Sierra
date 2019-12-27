@@ -7,7 +7,7 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 from flask import Flask, render_template
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='', static_url_path='')
 
 # Check for environment variable
 if not os.getenv("DATABASE_URL"):
