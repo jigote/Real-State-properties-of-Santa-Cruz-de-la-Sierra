@@ -5,7 +5,7 @@ from flask_session import Session
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from flask import Flask, render_template
-from http.server import HTTPServer
+from http.server import HTTPServer, SimpleHTTPRequestHandler
 
 app = Flask(__name__)
 
@@ -43,13 +43,21 @@ def smartstudio():
 
 @app.route("/tour_nido")
 def tour_nido():
-    server_address = ('localhost', 8000)
-    httpd = server_address
-    return render_template("Tour_para_subir/index.html", httpd=httpd)
+    return render_template('Tour_para_subir/index.html')
 
-@app.route("/<string:edificio>")
-def Dashboard(edificio):
-    edificio = edificio.capitalize()
-    return f"<h1> Proyecto {edificio}</h1>"
+
+class Handler(SimpleHTTPRequestHandler):
+    def __init__(self, *args, directory=None, **kwargs):
+        super().__init__(*args,
+                         directory=r'C:\Users\User\Videos',
+                         **kwargs)
+
+
+def run(server_class=HTTPServer, handler_class=Handler):
+    server_address = ('localhost', 8000)
+    httpd = server_class(server_address, handler_class)
+    httpd.serve_forever()
+
+
 
 
