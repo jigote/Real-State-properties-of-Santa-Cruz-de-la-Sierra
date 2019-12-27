@@ -42,7 +42,7 @@ def smartstudio():
 
 @app.route("/tour_nido")
 def tour_nido():
-    return render_template("tour_nido.html")
+    return render_template("Tour_para_subir/index.html")
 
 @app.route("/<string:edificio>")
 def Dashboard(edificio):
