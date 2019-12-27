@@ -5,6 +5,7 @@ from flask_session import Session
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from flask import Flask, render_template
+from http.server import HTTPServer
 
 app = Flask(__name__)
 
@@ -42,7 +43,9 @@ def smartstudio():
 
 @app.route("/tour_nido")
 def tour_nido():
-    return render_template("Tour_para_subir/index.html")
+    server_address = ('localhost', 8000)
+    httpd = server_address
+    return render_template("Tour_para_subir/index.html", httpd=httpd)
 
 @app.route("/<string:edificio>")
 def Dashboard(edificio):
