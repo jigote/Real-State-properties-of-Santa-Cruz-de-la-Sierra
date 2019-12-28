@@ -5,7 +5,6 @@ from flask_session import Session
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from flask import Flask, render_template
-from http.server import HTTPServer, SimpleHTTPRequestHandler
 
 app = Flask(__name__, static_folder='', static_url_path='')
 
@@ -45,18 +44,6 @@ def smartstudio():
 def tour_nido():
     return render_template('Tour_para_subir/index.html')
 
-
-class Handler(SimpleHTTPRequestHandler):
-    def __init__(self, *args, directory=None, **kwargs):
-        super().__init__(*args,
-                         directory=r'C:\Users\User\Videos',
-                         **kwargs)
-
-
-def run(server_class=HTTPServer, handler_class=Handler):
-    server_address = ('localhost', 8000)
-    httpd = server_class(server_address, handler_class)
-    httpd.serve_forever()
 
 
 
