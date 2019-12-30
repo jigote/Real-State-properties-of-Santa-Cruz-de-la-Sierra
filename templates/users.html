@@ -1,90 +1,63 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+        <link href="style1.css" rel="stylesheet">
         <title>Tu Paseo Virtual!</title>
-        <link rel="stylesheet" href="style.css">
         <style>
-            table{
-                border:5px dotted gray;
-                border-collapse: collapse;
-                width: 80%;
+            a:active{
+                color:red;
+            }
+            a:hover{
+                background: greenyellow;
+            }
+            form :active {
+                color: red;
+            }           
+
+            form button {
+                background: purple;
+            }
+            #my-button{
+                color: whitesmoke;
+            }
+            #cuadro{
+                background-color: rebeccapurple;
+                width: 400px;
+                height: 80px;
+                margin: 30px;
                 text-align: center;
+                color: black;
+                padding: 30px;
             }
-            th{
-                color: chartreuse;
-                font-size: x-large;
-                border:1px solid black;
-                background-color: cadetblue;
+            p{
+                font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
             }
-            td{
-                border:1px solid black;
-            }
-            div{
+            #imagen{
                 background-color: green;
-                width: 100%;
-                height:60px;
-
-                padding: 10px;
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: medium;
-                font-weight: bold;
-
-                border: 10px solid rgb(128, 4, 0);	 
             }
 
+            #imagen:hover{
+                background-color: greenyellow;
 
-            #top{
-                font-size: 38px;
-                text-align: center;
-            }
-            #botton{
-                font-size: 20px;
-                padding:10px;
-                background-color:rgb(44, 142, 172);
-                width: 100%;
-                height:60px;
-            }
-
-            body{
-                text-align:center;
             }
         </style>
     </head>
     <body>
-        <table>
-            <tr>
-                <th >Departamentos</th>
-                <th >Ciudad</th>
-                <th >Pais</th>
-                <th >Usuario</th>
-            </tr>
-            {% for name in names %}
-            <tr>
-                <td> SmartStudio </td>
-                <td> Santa Cruz de la Sierra  </td>
-                <td> Bolivia</td>
-                <td> {{ name }}</td>
-            </tr>
-            {% endfor %}
-
-            <tr>
-                <td> Trii</td> 
-                <td> Santa Cruz de la Sierra </td>
-                <td> Bolivia </td>
-            </tr> 
-
-            <tr>
-                <td> Skycity </td> 
-                <td> Santa Cruz de la Sierra </td>
-                <td> Bolivia </td>
-            </tr> 
-        </table>
-
-        <p id="botton">oficina central: Barrio equipetrol, esquina fidalga.
-            <br>
-            Santa Cruz de la Sierra - Bolivia
-            <br>
-            Contacto: 76000632
-        </p>
+        <h3>bienvenido</h3>
+        <p>This paragraph contains a link:
+            <a href="#">This link will turn red while you click on it.</a>
+            The paragraph will get a gray background while you click on it or the link.
+          </p>
+        <form>
+            <label for="Correo">enviar: </label>
+            <button id="my-button" type="button">Try Clicking Me or My Label!</button>
+        </form>
+        <div id=cuadro>
+            condominio portofino
+        </div>
+        <div id="imagen">
+            <img src="COM_logo_TRAZ (RGB)-09.png" width="180px">
+        </div>
     </body>
 </html>
