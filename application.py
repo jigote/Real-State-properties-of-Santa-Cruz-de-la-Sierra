@@ -40,9 +40,25 @@ def nido():
 def smartstudio():
     return render_template("smartstudio.html")
 
+@app.route("/trii")
+def triii():
+    return render_template("triii.html")
+
 @app.route("/tour_nido")
 def tour_nido():
     return render_template('Tour_para_subir/index.html')
+
+@app.route("/dashboard")
+def dashboard():
+    return render_template('dashboard.html')
+
+@app.route("/landingpage")
+def landingpage():
+    return render_template('landingpage.html')
+
+
+
+
 
 
 

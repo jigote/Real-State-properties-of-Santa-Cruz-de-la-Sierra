@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .jumbotron {
+	        background-color: #309d20;
+	        background-image: url("http://www.grupo-lafuente.com/images/proy_scz_1.jpg");
+        }
+        .col-sm-4{
+        }
+    </style>
+</head>
+
+<body>
+<div class="jumbotron text-center">
+        <h1 background="red">Los mejores proyectos de departamentos en la ciudad de Santa Cruz de la Sierra, Bolivia</h1>
+        <p>Conoce tu futuro hogar o tu próxima inversión en Bienes raices!</p>
+    </div>
+  
+    <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <h3>SmartStudio</h3>
+        <a href="{{ url_for('smartstudio') }}">
+            <img src="http://www.radiocamba.com.bo/imagen/noticias/1780.jpg" class="img-fluid" alt="Nano by Smartstudio">
+        </a>    
+        <p>Zona Equipetrol</p>
+      </div>
+      <div class="col-sm-4">
+        <h3>Nido</h3>
+        <a href="{{ url_for('nido') }}">
+            <img src="http://prensarealestate.com/wp-content/uploads/2019/04/IMG-20190404-WA0012-610x380.jpg" class="img-fluid" alt=" condominio Nido">
+        </a>
+        <p>Zona Norte de Santa Cruz</p>
+      </div>
+      <div class="col-sm-4">
+        <h3>Triii</h3>
+        <a href="{{ url_for('triii') }}">
+            <img src="https://triii.com.bo/wp-content/uploads/2019/03/6.jpg" class="img-fluid" alt="condominio Triii">
+        </a>
+        <p>zona norte entre 7mo y 8vo anillo, zona el remanso</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="demo" class="carousel slide" data-ride="carousel">
+
+    <!-- Indicators -->
+    <ul class="carousel-indicators">
+      <li data-target="#demo" data-slide-to="0" class="active"></li>
+      <li data-target="#demo" data-slide-to="1"></li>
+      <li data-target="#demo" data-slide-to="2"></li>
+    </ul>
+  
+    <!-- The slideshow -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://www.lostiempos.com/sites/default/files/styles/noticia_detalle/public/media_imagen/2018/10/15/6_p_1_consorcio_lafuente.jpg?itok=cMm0HkTI" alt="nueva santa cruz">
+      </div>
+      <div class="carousel-item">
+        <img src="https://images.assetsdelivery.com/compings_v2/lightfieldstudios/lightfieldstudios1709/lightfieldstudios170906266.jpg" alt="VR family">
+      </div>
+      <div class="carousel-item">
+        <img src="https://cdn2.infocasas.com.uy/repo/img/bad028941bd572e306770c8e47b29cac5415cc9f.jpg.th810.jpg" alt="SmartStudio">
+      </div>
+    </div>
+  
+    <!-- Left and right controls -->
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+  
+  </div>
+</body>
+</html>
