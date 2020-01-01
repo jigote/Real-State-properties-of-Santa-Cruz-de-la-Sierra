@@ -23,9 +23,9 @@ db = scoped_session(sessionmaker(bind=engine))
 
 
 @app.route("/")
-def index():
+def landingpage():
     heading="Hola muundoo!!"
-    return render_template("index.html", heading=heading)
+    return render_template("landingpage.html", heading=heading)
 
 @app.route("/users")
 def users():
@@ -52,9 +52,9 @@ def tour_nido():
 def dashboard():
     return render_template('dashboard.html')
 
-@app.route("/landingpage")
-def landingpage():
-    return render_template('landingpage.html')
+@app.route("/index")
+def index():
+    return render_template('index.html')
 
 
 
