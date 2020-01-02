@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEA,EAAE;EACE,SAAS,EAAE,IAAI;EACf,KAAK,EAJF,GAAG;;AAOV,EAAE;EACE,SAAS,EAAE,IAAI;EACf,KAAK,EATF,GAAG",
+"sources": ["../../../../../Randy%20A%C3%B1ez/Documents/CS50/project1/templates/variables.scss"],
+"names": [],
+"file": "variables.css"
+}

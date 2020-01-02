@@ -14,9 +14,36 @@
             h1{
                 text-align: center;
             }
+            input[type=text]{
+                background-color: yellow;
+            }
+
         </style>
 
-        <h1>{% block heading %}{% endblock %}</h1>
+        {% block heading %}
+        <form>
+            <div>
+                <input name="name" type="text" placeholder="Nombre">
+                <input name="name" type="text" placeholder="Apellido">
+                <input name="age" type="number" placeholder="Edad">
+                <input name="celular" type="number" placeholder="Celular">
+                <input name="email" type="email" placeholder="Correo electrónico">
+                <input name="password" type="password" placeholder="Password">
+            </div>
+    
+            <div>
+                Que Area Social le gustaría visitar primero?
+                <input name="social" type="radio" value="piscina">Piscina
+                <input name="social" type="radio" value="gimnacio">Gimnasio
+                <input name="social" type="radio" value="cowork">Zona de CoWork
+                <input name="social" type="radio" value="petpark">Petpark
+                <input name="social" type="radio" value="lobbing">Otro
+            </div>
+    
+            <div>
+        </form>
+        {% endblock %}
+
     </head>
     <body>
         {% block body %}{% endblock %}
@@ -24,7 +51,7 @@
             {% block content %}
             <form>
                 <input type="text" placeholder="Full Name" name="name">
-                <button> submit!</button>
+                <button type="button" class="btn btn-primary"> submit!</button>
             </form>
             {% endblock %}
         </div>
