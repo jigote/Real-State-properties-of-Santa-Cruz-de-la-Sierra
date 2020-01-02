@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+    portofino departamentos
+{% endblock %}
+
+{% block body %}
+    <h2>Aún no hay tour virtual de portofino, pero puede ver otros proyectos que si tengan.</h2>
+        <a href="{{ url_for('landingpage') }}"><h3>volver</h3></a>
+    <br>
+    <img src="https://triii.com.bo/wp-content/uploads/2019/04/pnalo-triii.jpg" class="img-fluid" alt="departamento triii">
+    <br>
+    <ul></ul>
+        <li>Suit</li>
+        <li>2 dormitorios con baño compartido</li>
+        <li>Comedor y sala de estar</li>
+        <li>Cocina integrada tipo americana</li>
+        <li>Área de servicio independiente</li>
+        <li>Terraza</li>
+        <li>Losa técnica para instalación de A/C</li>
+    <a href="{{ url_for('landingpage') }}">volver</a>
+{% endblock %}

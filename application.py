@@ -44,6 +44,26 @@ def smartstudio():
 def triii():
     return render_template("triii.html")
 
+@app.route("/portofino")
+def portofino():
+    return render_template("portofino.html")
+
+@app.route("/torrepremium")
+def torrepremium():
+    return render_template("torrepremium.html")
+
+@app.route("/torreszen")
+def torreszen():
+    return render_template("torreszen.html")
+
+@app.route("/skyLux")
+def skyLux():
+    return render_template("skyLux.html")
+
+@app.route("/skyPalmeto")
+def skyPalmeto():
+    return render_template("skyPalmeto.html")
+
 @app.route("/tour_nido")
 def tour_nido():
     return render_template('Tour_para_subir/index.html')
