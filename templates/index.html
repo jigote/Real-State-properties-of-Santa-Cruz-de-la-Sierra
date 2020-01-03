@@ -78,7 +78,7 @@
         </table>
         <br>
 
-        <form>
+        <form action="{{ url_for('dashboard') }}" method="POST">
             <input type="text" placeholder="Full Name" name="name">
             <button class="btn btn-primary"> Enviar</button>
         </form>

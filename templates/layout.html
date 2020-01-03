@@ -25,13 +25,14 @@
     </head>
     <body>
         <h1>{% block heading %}{% endblock %}</h1>
-        <form>
+        <form action="{{ url_for('dashboard') }}" method="POST">
             <div>
                 <input name="name" type="text" placeholder="Nombre"><br>
                 <input name="name" type="text" placeholder="Apellido"><br>
                 <input name="celular" type="number" placeholder="Celular"><br>
                 <input name="email" type="email" placeholder="Correo electrónico"><br>
                 <input name="password" type="password" placeholder="Password"><br>
+                <button class="btn btn-primary"> submit!</button>
             </div>
     
             <div>
@@ -44,14 +45,14 @@
             </div>
     
             <div>
-        </form>
+        </form >
 
         {% block body %}{% endblock %}
         <div id="content">
             {% block content %}
-            <form>
+            <form action="{{ url_for('users') }}" method="POST">
                 <input type="text" placeholder="Full Name" name="name">
-                <button type="button" class="btn btn-primary"> submit!</button>
+                <button class="btn btn-primary"> submit!</button>
             </form>
             {% endblock %}
         </div>

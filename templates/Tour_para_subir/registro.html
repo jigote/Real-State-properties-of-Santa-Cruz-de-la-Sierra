@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <h2>Ambientes visitados</h2>
+    </head>
+    <body>
+        {% for ambiente in ambientes %}
+            <li>{{ ambiente }}</li>
+        {% endfor %}
+    </body>
+
+    <form action="{{ url_for('registro') }}" method="post">
+        <input type="test" name="ambiente" placeholder="Ingrese un ambiente o Area Social">
+        <button>Añadir Ambiente</button>
+    </form>
+
+    <a href="{{ url_for('nido') }}"><h3>Volver a nido</h3></a>
+</html>

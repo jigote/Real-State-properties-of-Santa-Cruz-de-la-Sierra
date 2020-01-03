@@ -4,7 +4,7 @@ from flask import Flask, session
 from flask_session import Session
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__, static_folder='', static_url_path='')
 
@@ -27,10 +27,13 @@ def landingpage():
     heading="Hola muundoo!!"
     return render_template("landingpage.html", heading=heading)
 
-@app.route("/users")
+@app.route("/users", methods=["GET", "POST"])
 def users():
-    names = ["Alice", "Bob", "Charlie"]
-    return render_template("users.html", names=names)
+    if request.method == "GET":
+        return "Querida usuario, querido usuario, por favor ingrese sus datos"
+    else:
+        name = request.form.get("name")
+        return render_template('users.html', name=name)
 
 @app.route("/nido")
 def nido():
@@ -64,13 +67,28 @@ def skyLux():
 def skyPalmeto():
     return render_template("skyPalmeto.html")
 
+@app.route("/registro", methods=["GET", "POST"])
+def registro():
+    if session.get("ambientes") is None:
+        session["ambientes"] = []
+    if request.method == "POST":
+        ambiente = request.form.get("ambiente")
+        session["ambientes"].append(ambiente)
+
+    return render_template('Tour_para_subir/registro.html', ambientes=session["ambientes"])
+
 @app.route("/tour_nido")
 def tour_nido():
     return render_template('Tour_para_subir/index.html')
 
-@app.route("/dashboard")
+
+@app.route("/dashboard", methods=["GET", "POST"])
 def dashboard():
-    return render_template('dashboard.html')
+    if request.method == "GET":
+        return "Pidale al usuario que vuelva a enviar el formulario"
+    else:
+        name = request.form.get("name")
+        return render_template('dashboard.html', name=name)
 
 @app.route("/index")
 def index():
