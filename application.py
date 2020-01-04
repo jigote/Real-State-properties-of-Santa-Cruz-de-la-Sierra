@@ -92,7 +92,26 @@ def dashboard():
 
 @app.route("/index")
 def index():
-    return render_template('index.html')
+    departamentos = db.execute("SELECT * FROM departamentos").fetchall()
+    return render_template('index.html', departamentos=departamentos)
+
+@app.route("/book", methods=["POST"])
+def book():
+    """"registra una visita"""
+
+    #obtener informacion 
+    name = request.form.get("name")
+    try:
+        departamento_id = int(request.form.get("departamento_id"))
+    except ValueError:
+        return render_template("error.html", message="Numero de departamento inválido")
+
+    if db.execute("SELECT * FROM departamentos WHERE id = :id", {"id": departamento_id}).rowcount == 0:
+        return render_template("error.html", message="No hay tal departamento con ese id")
+    db.execute("INSERT INTO visitantes (nombre, departamento_id) VALUES (:nombre, :departamento_id)", 
+            {"nombre":name, "departamento_id":departamento_id})
+    db.commit()
+    return render_template("success.html")
 
 
 

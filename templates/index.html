@@ -78,9 +78,21 @@
         </table>
         <br>
 
-        <form action="{{ url_for('dashboard') }}" method="POST">
-            <input type="text" placeholder="Full Name" name="name">
-            <button class="btn btn-primary"> Enviar</button>
+        <form action="{{ url_for('book') }}" method="post">
+            <div class="form-group">
+                <select class="form-control" name="departamento_id">
+                    {% for departamento in departamentos %}
+                        <option value="{{ departamento.id }}">Proyecto {{ departamento.edificio }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <input class="form-group" name="name" placeholder="Nombre del visitante"> 
+            </div>
+            <div>
+                <button class="btn btn-primary">Registrar visita</button>
+            </div>
         </form>
 
         <h2>Conoce el departamento desde tu laptop, antes de comprarlo</h2>
