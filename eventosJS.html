@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            let counter = 0;
+
+            function cont_ambiente1(){
+                counter++;
+                document.querySelector('#counter').innerHTML = counter;
+
+                if (counter % 10 === 0){
+                    alert(`el visitante visito ${counter} veces el ambiente 1`);
+                }
+            }
+                
+        </script>
+
+
+        <title>Departamentos</title>
+        <style>
+            #counter {
+            font-size:50px;
+            color:#db2b25;
+        }
+        </style>
+    </head>
+    <body>
+        <h2>Nro de clicks</h2>
+        <h1 id = "counter">0</h1>
+        <button onclick="cont_ambiente1()"> Click aqui</button>
+    </body>
+</html>

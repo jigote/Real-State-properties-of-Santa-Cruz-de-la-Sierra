@@ -5,5 +5,15 @@
     {% for ambiente in ambientes %}
       <li>{{ ambiente }}</li>
     {% endfor %}
+
+    <h1> Todos los departamentos</h1>
+
+    <ul>
+      {% for departamento in departamentos %}
+        <li>
+          <a href="{{ url_for ('departamento', departamento_id=departamento.id) }}">
+            {{ departamento.edificio }} con duración de 
+          </a>
+        </li>
   </body>
 </html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <title>
+        Detalles del departamento
+    </title>
+    <body>
+        <h1>Detalles del departamento</h1>
+
+        <ul>
+            <li>Edificio: {{ departamento.id }}</li>
+            <li>Direcciòn, (aun no puedo traer la direccion de la tabla de base de datos por el tema de caracteres de 8 bits</li>
+            <li>lo mismo con la columna de duraciòn :(</li>
+        </ul>
+
+        <h2>visitantes</h2>
+        <ul>
+            {% for visitante in visitantes %}
+                <li>{{ visitante.name }}</li>
+            {% else %} 
+                <li>No hay visitantes.</li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
