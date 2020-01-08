@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                document.querySelector('#nuevo-comentario').onsubmit = () => {
+                    // crear nuevo comentario para list
+                    const li = document.createElement('li');
+                    li.innerHTML = document.querySelector('#comentario').value;
+
+                    //agregar nuevo comentaio a la lista de comentarios
+                    document.querySelector('#comentarios').append(li);
+
+                    //limpiar input field
+                    document.querySelector('#comentario').value = '';
+
+                    //stop from from submitting
+                    return false;
+                };
+            });
+        </script>
+    </head>
+    <body>
+        <h1>"Comentarios"</h1>
+        <ul id="comentarios">
+        </ul>
+        <form id="nuevo-comentario">
+            <input id="comentario" autocomplete="off" autofocus placeholder="Nuevo Comentario" type="text">
+            <input type="submit">
+        </form>
+    </body>
+</html>

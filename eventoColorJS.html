@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            document.addEventListener('DOMContentLoaded', function(){
+
+                //cambiar el font color a rojo
+                document.querySelector('#red').onclick = function() {
+                    document.querySelector('#muro').style.color = 'red';
+                };
+
+                //cambiar el font color a verder
+                document.querySelector('#green').onclick = function() {
+                    document.querySelector('#muro').style.color = 'green';
+                };
+
+                //cambiar el font color a azul
+                document.querySelector('#blue').onclick = function() {
+                    document.querySelector('#muro').style.color = 'blue';
+                };
+            });    
+        </script>
+        <title>comvista</title>
+    </head>
+    <body>
+        <h1 id="muro">muro</h1>
+        <button id="red">rojo</button>
+        <button id="green">verde</button>
+        <button id="blue">azul</button>
+    </body>
+</html>

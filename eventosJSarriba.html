@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('button').onclick = count;
+        });
+        let counter = 0;
+        function count(){
+            counter++;
+            document.querySelector('#counter').innerHTML = counter;
+            if (counter % 10 === 0){
+                alert(`has precionado ${counter} veces el boto`);
+            }
+        }
+    </script>
+
+    <title>Departamentos</title>
+    <body>
+        <h2>Nro de clicks</h2>
+        <h1 id = "counter">0</h1>
+        <button> Click aqui</button>
+    </body>
+</html>
+

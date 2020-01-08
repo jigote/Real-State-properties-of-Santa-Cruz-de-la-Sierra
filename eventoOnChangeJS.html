@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+
+                // cambia el color del heading cuando el dropdown cambia
+                document.querySelector('#color-change').onchange = function() {
+                        document.querySelector('#muro').style.color = this.value;
+                
+                };
+            });
+        </script>
+        <title>Comvista</title>
+    </head>
+    <body>
+        <h1 id="muro">Muro</h1>
+        <select id = "color-change">
+            <option value = "black">Negro</option>
+            <option value = "red">rojo</option>
+            <option value = "green">verde</option>
+            <option value = "blue">Azul</option>
+        </select>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+
+                // que cada botòn cambie el color del heading
+                document.querySelectorAll('.color-change').forEach(button => {
+                    button.onclick = () => {
+                        document.querySelector('#muro').style.color = button.dataset.color;
+                    };
+                });
+            });
+        </script>
+        <title>Comvista</title>
+    </head>
+    <body>
+        <h1 id="muro">Muro</h1>
+        <button class="color-change" data-color="red">rojo</button>
+        <button class="color-change" data-color="blue">azul</button>
+        <button class="color-change" data-color="green">verde</button>
+    </body>
+</html>
