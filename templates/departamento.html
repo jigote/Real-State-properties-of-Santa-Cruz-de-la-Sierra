@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>comvista</title>
+    </head>
+    <body>
+        <h1>Detalles de Vuelo</h1>
+
+        <ul>
+            <li>Edificio: {{ departamento.edificio }}</li>
+        </ul>
+
+        <h2>visitantes</h2>
+        <ul>
+            {% for visitante in visitantes %}
+                <li>{{ visitante.nombre }}</li>
+            {% else %}
+                <li>No hay visitantes</li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>

@@ -124,13 +124,13 @@ def departamento(departamento_id):
     """ Lista de detalles sobre ese departamento. """
 
     #Me aseguro de que el departamento existe.
-    departamento = db.execute("SELECT * FROM departamentos WHERE id = :id", {"id":departamento_id})fetchone()
+    departamento = db.execute("SELECT * FROM departamentos WHERE id = :id", {"id":departamento_id}).fetchone()
     if departamento is None:
         return render_template("error.html", message="No hay tal vuelo.")
-
-    visitantes = db.execute("SELECT name FROM visitantes WHERE departamento_id = : departamento_id", 
-                            {"departamento_id": departamento:id}).fetchall()
-        return render_template("dashboard.html", departamento=departamento,visitantes=visitantes)
+    #obtener todos los pasajeros
+    visitantes = db.execute("SELECT name FROM visitantes WHERE departamento_id = :departamento_id", 
+                            {"departamento_id": departamento_id}).fetchall()
+    return render_template("dashboard.html", departamento=departamento, visitantes=visitantes)
 
 
 
