@@ -4,6 +4,8 @@
         <title>Tu Paseo Virtual!</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type = "text-javascript" src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src = "{{ url_for('static', filename = 'index.js'}}"></script>
         <style>
             table{
                 align-items: center;
@@ -40,6 +42,7 @@
         </style>
     </head>
     <body>
+        
         <h1 id="top">Los mejores proyectos de departamentos en la ciudad de Santa Cruz, Bolivia!</h1>
         <h2 id="top">Conoce tu futuro hogar o tu proxima inversión en bienes raices!</h2>
         <br>
@@ -77,6 +80,12 @@
             
         </table>
         <br>
+        <ul id = "votos">
+        </ul>
+        <button data-vote = "me gusta">Me gusta</button>
+        <button data-vote = "no me gusta">no me gusta</button>
+        <button data-vote = "compartir">compartir</button>
+
 
         <form action="{{ url_for('book') }}" method="post">
             <div class="form-group">
@@ -94,6 +103,7 @@
                 <button class="btn btn-primary">Registrar visita</button>
             </div>
         </form>
+
 
         <h2>Conoce el departamento desde tu laptop, antes de comprarlo</h2>
         <h4>Gracias a la tecnologia, hoy en dia tenemos la 
