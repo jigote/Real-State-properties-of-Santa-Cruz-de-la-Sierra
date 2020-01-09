@@ -3,43 +3,46 @@
     <head>
         <script>
             document.addEventListener('DOMContentLoaded', () => {
-                //puedo agregar cualquier propiedad de HTML usando Javascript
-                //desabilito la propiedad del boton
-                document.querySelector('#submit').disabled = true ;
 
+                // By default, submit button is disabled
+                document.querySelector('#enviar').disabled = true;
+
+                // Enable button only if there is text in the input field
                 document.querySelector('#comentario').onkeyup = () => {
                     if (document.querySelector('#comentario').value.length > 0)
-                        document.querySelector('#submit').disabled = false;
+                        document.querySelector('#enviar').disabled = false;
                     else
-                    document.querySelector('#submit').disabled = true;
+                        document.querySelector('#enviar').disabled = true;
                 };
 
                 document.querySelector('#nuevo-comentario').onsubmit = () => {
 
-                    // crear nuevo comentario para list
+                    // Create new item for list
                     const li = document.createElement('li');
                     li.innerHTML = document.querySelector('#comentario').value;
 
-                    //agregar nuevo comentaio a la lista de comentarios
+                    // Add new item to task list
                     document.querySelector('#comentarios').append(li);
 
-                    //limpiar input field
+                    // Clear input field and disable button again
                     document.querySelector('#comentario').value = '';
-                    document.querySelector('#submit').disabled = true;
+                    document.querySelector('#enviar').disabled = true;
 
-                    //stop from from submitting
+                    // Stop form from submitting
                     return false;
                 };
+
             });
         </script>
+        <title>Comentarios</title>
     </head>
     <body>
-        <h1>"Comentarios"</h1>
+        <h1>Comentarios</h1>
         <ul id="comentarios">
         </ul>
         <form id="nuevo-comentario">
-            <input id="comentario" autocomplete="off" autofocus placeholder="Nuevo Comentario" type="text">
-            <input type="submit">
+            <input id="comentario" autocomplete="off" autofocus placeholder="nuevo comentario" type="text">
+            <input id="enviar" type="submit">
         </form>
     </body>
 </html>

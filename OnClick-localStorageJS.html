@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script>
+            if(!localStorage.getItem('counter'))
+                localStorage.setItem('counter',0);
+
+                document.addEventListener('DOMContentLoaded', () => {
+                    document.querySelector('#counter').innerHTML = localStorage.getItem('counter');
+                
+                    //cuenta cada vez que es presionado el botón
+                    document.querySelector('button').onclick = () => {
+                        //Incrementar ciontador actual
+                        let counter = localStorage.getItem('counter');
+                        counter++;
+
+                        //actualizar contador
+                        document.querySelector('#counter').innerHTML = counter;
+                        localStorage.setItem('counter', counter);
+                    }
+                });
+        </script>
+        <title>Comvista</title>
+    </head>
+    <body>
+        <h1 id="counter">0</h1>
+        <button type="button" class="btn btn-outline-primary">edificio Triii</button>
+    </body>
+</ht
