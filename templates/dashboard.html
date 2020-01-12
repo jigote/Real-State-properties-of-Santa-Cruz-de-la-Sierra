@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <body>
-    {{ nombre }} acaba de ingresar y está visitando los siguientes ambientes:
+    {{ nombre }} {{ lastName }} acaba de ingresar y está visitando los siguientes ambientes:
     {% for ambiente in ambientes %}
       <li>{{ ambiente }}</li>
     {% endfor %}

@@ -113,6 +113,22 @@ def book():
     db.commit()
     return render_template("success.html")
 
+@app.route("/book2", methods=["POST"])
+def book2():
+    """"llenó el formulario"""
+
+    #obtener informacion 
+    name = request.form.get("name")
+    lastName = request.form.get("lastName")
+    cellphone = request.form.get("cellphone")
+    email = request.form.get("email")
+
+    db.execute("INSERT INTO form_info (name, lastName, cellphone, email) VALUES (:name, :lastName, :cellphone, :email)", 
+            {"name":name, "lastName":lastName, "cellphone":cellphone, "email":email})
+    db.commit()
+    return render_template("success.html")
+
+
 @app.route("/departamentos")
 def departamentos():
     """Lista de todos los departamentos"""

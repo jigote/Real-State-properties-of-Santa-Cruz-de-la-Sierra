@@ -12,6 +12,14 @@ CREATE TABLE visitantes (
 );
 
 
+CREATE TABLE form_info (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR NOT NULL,
+    lastName VARCHAR NOT NULL,
+    cellphone INTEGER NULL,
+    email VARCHAR NOT NULL
+);
+
 SELECT edificio, duración, nombre FROM departamentos 
     JOIN visitantes ON visitantes.departamento_id = departamentos.id
     WHERE nombre = 'Alice';
