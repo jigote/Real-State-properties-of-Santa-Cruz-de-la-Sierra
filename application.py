@@ -113,17 +113,20 @@ def book():
     db.commit()
     return render_template("success.html")
 
-@app.route("/book2", methods=["POST"])
+@app.route("/book2", methods=["GET", "POST"])
 def book2():
     """"llenó el formulario"""
 
+    if request.method == "GET":
+        return "Querida usuaria, querido usuario, porfavor ingrese todos los datos de la casilla anterior"
+   
     #obtener informacion 
     name = request.form.get("name")
     lastName = request.form.get("lastName")
     cellphone = request.form.get("cellphone")
     email = request.form.get("email")
 
-    db.execute("INSERT INTO form_info (name, lastName, cellphone, email) VALUES (:name, :lastName, :cellphone, :email)", 
+    db.execute("INSERT INTO form_info (lastName, name, cellphone, email) VALUES (:lastName, :name, :cellphone, :email)", 
             {"name":name, "lastName":lastName, "cellphone":cellphone, "email":email})
     db.commit()
     return render_template("success.html")

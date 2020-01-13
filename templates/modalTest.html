@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  
+  <button class="btn btn-primary" data-toggle="modal" data-target="#settings">
+              Log in
+          </button>
+     
+          <div id="settings" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                    <button class="close" data-dismiss="modal">&times;</button>
+                      <h3 class="modal-title">Log in</h3>
+                      <h4>Inicie sesión para comenzar tour virtual</h4>
+                  </div>
+                  <div class="modal-body">
+                    <form action="{{ url_for('book2') }}" method="POST">
+                        <div id=test class = "form-group">
+                            <input class = "form-control" name="name" type="text" placeholder="Nombre"><br>
+                            <input class = "form-control" lastName="lastName" type="text" placeholder="Apellido"><br>
+                            <input class = "form-control" cellphone="cellphone" type="number" placeholder="Celular"><br>
+                            <input class = "form-control" email="email" type="email" placeholder="Correo electrónico"><br>
+                            <input id = "submit" type = "submit" class="btn btn-primary" value="Enviar"> 
+                        </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                  </div>
+              </div>
+              </div>
+</html>

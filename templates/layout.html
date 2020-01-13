@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -23,20 +27,53 @@
 
 
         </style>
-    </head>
+
+        <script>
+
+
+        </script>
+    </head> 
+
     <body>
         <h1>{% block heading %}{% endblock %}</h1>
-        <form action="{{ url_for('book2') }}" method="POST">
-            <div class = "col-xs-4">
-                <input class = "form-control" name="name" type="text" placeholder="Nombre"><br>
-                <input class = "form-control" name="lastName" type="text" placeholder="Apellido"><br>
-                <input class = "form-control" name="cellphone" type="number" placeholder="Celular"><br>
-                <input class = "form-control" name="email" type="email" placeholder="Correo electrónico"><br>
-                <button class="btn btn-primary"> submit!</button>
+
+        {% block form %}
+        <button class="btn btn-primary" data-toggle="modal" data-target="#settings">
+            Log in
+        </button>
+   
+        <div id="settings" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                  <button class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title">Log in</h3>
+                    <h4>Inicie sesión para comenzar tour virtual</h4>
+                </div>
+                <div class="modal-body">
+                  <form action="{{ url_for('book2') }}" method="POST">
+                      <div id=test class = "form-group">
+                          <input class = "form-control" name="name" type="text" placeholder="Nombre"><br>
+                          <input class = "form-control" lastName="lastName" type="text" placeholder="Apellido"><br>
+                          <input class = "form-control" cellphone="cellphone" type="number" placeholder="Celular"><br>
+                          <input class = "form-control" email="email" type="email" placeholder="Correo electrónico"><br>
+                          <input id = "submit" type = "submit" class="btn btn-primary" value="Enviar"> 
+                      </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+                </div>
             </div>
-            <br>
+            </div>
+        {% endblock %}
+
+        
+        <form action="{{ url_for('book2') }}" method="POST">
             <div class="form-group">
-                Que Area Social le gustaría visitar primero?
+                <br>
+                <h4>Que Area Social le gustaría visitar primero?:</h4>
                 <input name="social" type="radio" value="piscina">Piscina
                 <input name="social" type="radio" value="gimnacio">Gimnasio
                 <input name="social" type="radio" value="cowork">Zona de CoWork<br>
@@ -44,7 +81,6 @@
                 <input name="social" type="radio" value="lobbing">Otro
             </div>
     
-            <div>
         </form >
 
         {% block body %}{% endblock %}
